@@ -43,7 +43,6 @@
       </v-col>
     </v-row>
 
-    <!-- Grey divider -->
     <v-divider thickness="2" class="mb-4"></v-divider>
     <v-card
       class=""
@@ -382,23 +381,19 @@ export default {
     } 
       else if (this.sortBy === "dueDate") {
   filteredUsers.sort((a, b) => {
-    const dateA = new Date(a.payment_date); // Assuming that the payment_date is a valid date string
-    const dateB = new Date(b.payment_date); // Assuming that the payment_date is a valid date string
+    const dateA = new Date(a.payment_date);
+    const dateB = new Date(b.payment_date); 
     return dateA - dateB;
   });
 }
-
-// Sort by last login
 else if (this.sortBy === "lastLogin") {
   filteredUsers.sort((a, b) => {
-    const dateA = new Date(a.last_login); // Assuming that the last_login is a valid date string
-    const dateB = new Date(b.last_login); // Assuming that the last_login is a valid date string
+    const dateA = new Date(a.last_login); 
+    const dateB = new Date(b.last_login); 
     return dateA - dateB;
   });
 }
       
-     
-      // Filter the sorted data based on the selected button
       if (this.selectedButton === "Paid") {
         filteredUsers = filteredUsers.filter(
           (user) => user.payment_status === "Paid"
@@ -440,8 +435,8 @@ v-btn {
 .button-toggle .v-btn {
   color: #6e6893;
   border-bottom-color: transparent;
-  text-transform: capitalize; /* Convert button text to lowercase */
-  font-size: 14px; /* Set font size to 14px */
+  text-transform: capitalize; 
+  font-size: 14px; 
   letter-spacing: normal;
   font-weight: 600;
 }
@@ -467,11 +462,11 @@ v-btn {
   font-size: 18px;
 }
 .custom-checkbox {
-  width: 20px; /* Set the desired width */
-  height: 20px; /* Set the desired height */
-  background-color: #3498db; /* Set the background color */
-  border: 2px solid #2980b9; /* Set a border for the checkbox */
-  border-radius: 5px; /* Rounded corners */
+  width: 20px; 
+  height: 20px; 
+  background-color: #3498db; 
+  border: 2px solid #2980b9; 
+  border-radius: 5px;
 }
 .accordion-title {
   cursor: pointer;
@@ -503,7 +498,7 @@ v-btn {
 }
 
 .accordion-fade-enter,
-  .accordion-fade-leave-to /* .accordion-fade-leave-active in <2.1.8 */ {
+  .accordion-fade-leave-to  {
   opacity: 0;
   transform: scaleY(0);
   transform-origin: top;

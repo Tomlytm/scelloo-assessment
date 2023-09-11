@@ -218,7 +218,7 @@ export default {
     },
     data() {
     return {
-      itemCheckboxState: false, // Initialize the checkbox state
+      itemCheckboxState: false,
     };
   },
   components: {
@@ -230,14 +230,10 @@ export default {
     ...mapMutations(['toggleItemOpen']),
     
 
-// Example method to toggle the 'open' property for a specific item
 toggleOpenForItem(itemId, event) {
-      // Check if the click target is the checkbox
       if (event.target.classList.contains('custom-checkbox')) {
-        return; // Do nothing if the click target is the checkbox
+        return; 
       }
-
-      // Call the mutation to toggle the 'open' property for the specified item
       this.toggleItemOpen(itemId);
     },
 
@@ -285,7 +281,6 @@ statusText(text) {
 </script>
   
   <style scoped>
-/* Add your CSS styles here */
 
 .accordion-title {
   cursor: pointer;
@@ -317,7 +312,7 @@ statusText(text) {
 }
 
 .accordion-fade-enter,
-  .accordion-fade-leave-to /* .accordion-fade-leave-active in <2.1.8 */ {
+  .accordion-fade-leave-to {
   opacity: 0;
   transform: scaleY(0);
   transform-origin: top;

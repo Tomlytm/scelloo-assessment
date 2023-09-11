@@ -126,7 +126,6 @@ export const store = createStore({
         open: false,
       },
     
-      // Add more random data objects without specific logic up to id 20
       {
         id: 6,
         user: {
@@ -167,11 +166,10 @@ export const store = createStore({
   }
   },
   mutations: {
-    // Define a mutation to toggle the 'open' property for a specific item
     toggleItemOpen(state, itemId) {
       const item = state.mydata.find((dataItem) => dataItem.id === itemId);
       if (item) {
-        item.open = !item.open; // Toggle the 'open' property
+        item.open = !item.open; 
         state.mydata.forEach((dataItem) => {
             if (dataItem.id !== itemId) {
               dataItem.open = false;
@@ -181,6 +179,5 @@ export const store = createStore({
     },
   },
   actions: {
-    // Define actions here if you need to perform asynchronous operations
   },
 })
